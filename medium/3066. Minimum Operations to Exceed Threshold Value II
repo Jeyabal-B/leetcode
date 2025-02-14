@@ -1,0 +1,30 @@
+class Solution {
+    public int minOperations(int[] nums, int k) {
+        
+
+        int count = 0;
+        int n = nums.length;
+        int min = nums[0];
+        for(int i=1;i<n;i++){
+            if(min>nums[i]){
+                min = nums[i];
+            }
+        }
+        
+        return 0;
+    }
+
+    private int getMinMax(int x, int y){
+        return ((Math.min(x,y) * 2)+(Math.max(x,y)));
+    }
+
+    private int getMin(int n, int exMin, int[] nums){
+        for(int i=1;i<n;i++){
+            if(min>nums[i]){
+                min = nums[i];
+            }
+        }
+    }
+    
+    //TODO pending solution
+}

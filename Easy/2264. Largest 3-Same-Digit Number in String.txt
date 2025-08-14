@@ -1,0 +1,32 @@
+class Solution {
+    public String largestGoodInteger(String num) {
+        String subStr = "";
+        String res = "";
+        int length = num.length();
+        char[] nums = num.toCharArray();
+        ArrayList<Integer> list = new ArrayList<>();
+        int i = 0;
+        for(char c : nums){
+            if(length-2>i && c==nums[i+1] && c==nums[i+2]){
+                subStr = "" + c + c + c;
+            }else {
+                if(!subStr.isEmpty()){
+                    list.add(Integer.valueOf(subStr));
+                    subStr = "";
+                }
+                
+            }
+            i++;
+        }
+
+        Collections.sort(list, Collections.reverseOrder());
+
+        if(!list.isEmpty()){
+            res = "" + list.get(0);
+        }
+        if("0".equals(res)){
+            return "000";
+        }
+        return res;
+    }
+}
